@@ -1,8 +1,8 @@
 {
   "name": "small-apps",
   "version": "0.0.0",
-  "description": "exercises\r =========",
-  "main": "brace-checker.js",
+  "description": "small apps\r =========",
+  "main": "app.js",
   "scripts": {
     "test": "mocha --reporter spec test"
   },
