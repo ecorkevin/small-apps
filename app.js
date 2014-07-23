@@ -44,6 +44,8 @@ module.exports = {
     }
 
     getBraceIndex = function (braces) {
+      // get the first opening brace's index,
+      // starting from right to left
       var curly = braces.lastIndexOf('{');
       var straight = braces.lastIndexOf('[');
       if (curly > straight) {
@@ -57,15 +59,16 @@ module.exports = {
     // get the index of the first brace
     var index = getBraceIndex(braces);
 
-    // get the first brace, and its counterpart, starting
-    // from right to left
+    // get the first brace and its counterpart,
+    // which should be the next character since we
+    // are going right to left
     var first = braces[index];
     var next = braces[index + 1];
 
     // if "next" is the opposite brace, these two are
     // valid, and we remove the braces from the array
     if (next === opposite(first)) {
-      braces.splice(getBraceIndex(braces), 2);
+      braces.splice(index, 2);
     }
     else {
       return false;
